@@ -1,0 +1,61 @@
+<body>
+    <div class="registro">
+        <div class="row">
+            <div class="col-md-6" style="background: url('/images/hero/hero.jpg') center center no-repeat; background-size: cover;">
+                <div class="py-5 px-5 h-100" style="background-color: rgba(0,0,0,0.3);">
+                    <div class="inner-block-signup">
+                        <h2 class="text-light">Talleres Online</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 px-5 d-flex align-middle col-registro">
+                <div class="my-auto">
+
+					<h3> ESTA PAGINA NO EXISTE</h3>
+
+                    
+                </div>
+            </div>
+        </div>
+</body>
+</div>
+
+
+
+
+
+<script>
+$(document).ready(function() {
+	//variables
+	var pass1 = $('[name=password]');
+	var pass2 = $('[name=contraseña2]');
+	var confirmacion = "Perfecto, las contraseñas coinciden";
+	var negacion = "No coinciden las contraseñas";
+	var vacio = "La contraseña no puede estar vacía";
+	//oculto por defecto el elemento span
+	var span = $('<span></span>').insertAfter(pass2);
+	span.hide();
+	//función que comprueba las dos contraseñas
+	function coincidePassword(){
+	var valor1 = pass1.val();
+	var valor2 = pass2.val();
+	//muestro el span
+	span.show().removeClass();
+	//condiciones dentro de la función
+	if(valor1 != valor2){
+	span.text(negacion).addClass('negacion');	
+	}
+	if(valor1.length==0 || valor1==""){
+	span.text(vacio).addClass('negacion');	
+	}
+	if(valor1.length!=0 && valor1==valor2){
+	span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
+	}
+	}
+	//ejecuto la función al soltar la tecla
+	pass2.keyup(function(){
+	coincidePassword();
+	});
+});
+
+</script>

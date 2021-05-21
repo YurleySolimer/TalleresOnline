@@ -1,0 +1,173 @@
+<div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <img src="/icons/logo.png" id="logo-sidebar" width="200px" style="border-radius: 40px;" alt="">
+                <img src="/icons/icon-64x64.png" id="icon-sidebar" width="40px" alt="">
+            </div>
+
+            <ul class="list-unstyled components mb-0">
+                <li>
+                    <a href="/dashboard-inicio">
+                        <i class="fas fa-desktop icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#OTSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle blackbackground">
+                        <i class="fas fa-car icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Orden de Trabajo</span>
+                    </a>
+                    <ul class="collapse list-unstyled" id="OTSubmenu">
+                        <li>
+                            <a href="/resumen">Resumen</a>
+                        </li>
+                        <li>
+                            <a  href="/nuevaOT">Nueva OT</a>                      
+                            </li>
+                        <li>
+                            <a href="/historial">Historial de OT</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#ProfSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle blackbackground">
+                        <i class="fas fa-tasks icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Proformas</span>
+                    </a>
+                     <ul class="collapse list-unstyled" id="ProfSubmenu">
+                         <li>
+                            <a href="/proformas">Nueva Proforma</a>
+                        </li>
+                         <li>
+                            <a href="/historial-proformas">Tus Proformas</a>
+                        </li>
+                     </ul>
+                </li>
+                <li>
+                    <a href="/facturacion">
+                        <i class="fas fa-dollar-sign icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Facturación</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/estadisticas">
+                        <i class="fas fa-chart-line icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Estadisticas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="navigation-disabled" disabled='true'>
+                        <i class="fas fa-shopping-cart icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Tienda Online</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/mis-clientes">
+                        <i class="fas fa-user icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Mis Clientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/estado-de-cuenta">
+                        <i class="fas fa-calculator icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Estado de Cuenta</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/atencion-al-cliente">
+                        <i class="fas fa-comment icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Atención al Cliente</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/terminosCondiciones">
+                        <i class="fas fa-info-circle icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Términos y Condiciones</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="components list-unstyled mb-0">
+                <li>
+                    <a href="/logout">
+                        <i class="fas fa-door-open icono-menu-sidebar"></i>
+                        <span class="sidebar-element">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+             {{#ifMayor faltan 0 }}            
+            <ul class="list-unstyled CTAs">
+
+                <li>
+                    Te restan <strong style="color: #006369"> {{faltan}} </strong> dias 
+                </li>
+                <li>
+                    <strong  style="color: #006369">de prueba</strong>
+                </li>
+                <li>
+                    <br>
+                    {{#ifMayor id_prueba 0}}
+                    <a href="/suscripcion/activar/{{id_prueba}}" class="upgrade-membership"><strong>Suscribirse</strong></a>
+                    {{/ifMayor}}
+                </li>
+            </ul>
+            {{/ifMayor}}
+
+        </nav>
+
+        <!-- CONTENT START (se continua estos divs en el Index y en cada página)  -->
+        <div id="content">
+            <!-- NAVBAR START -->
+            <nav class="navbar navbar-partials navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <span id="name-client-title-navbar">{{nombre_local}}</span>
+                    <div class="navbar nav nav-width-header">
+                        <ul class="nav navbar-nav nav-width-header ml-auto">
+                            <li class="nav-item" style="height: 55px;">
+
+                                <form action="busqueda" method="GET" style="margin: 0;">
+                                    <div class="active-purple-4 mb-4 search-accesos-div">
+                                        <input class="form-control search-accesos" type="search" placeholder="Buscar" aria-label="Buscar" name="Buscar" required="">
+                                    </div>
+                                </form>
+                                
+                            </li>
+                            <li class="nav-item incremento-icono" style="display: none;">
+                                <a class="nav-link" href="#"><i class="fas fa-bell icono-menu"></i></a>
+                            </li>
+                            <li class="nav-item incremento-icono">
+                                <a href="#configUserMenu"  data-toggle="collapse" aria-expanded="false" class="nav-link">
+                                    <i class="fas fa-user-circle icono-menu"></i>
+                                </a>
+                                <ul class="collapse list-unstyled" id="configUserMenu" style="z-index: 100;">
+                                    <li>
+                                        <a class="userMenuOption" href="/perfil">Mi Perfil</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#configAccesosLocales" data-toggle="collapse" aria-expanded="false" class="userMenuOption" href="#">
+                                            Configuración
+                                        </a>
+                                        <ul class="collapse list-unstyled" id="configAccesosLocales">
+                                            <li>
+                                                <a class="enlace-accesoslocales" href="/accesos">Accesos</a>
+                                            </li>
+                                            <li>
+                                                <a class="enlace-accesoslocales" href="/locales">Locales</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="userMenuOption" href="logout">Cerrar Sesión</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- NAVBAR END -->
