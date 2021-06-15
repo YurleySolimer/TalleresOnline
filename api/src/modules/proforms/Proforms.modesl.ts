@@ -23,7 +23,10 @@ const proformsSchema = new Schema(
     kilometraje: {
       type: Number,
     },
-    client: {
+    clientName: {
+      type: String,
+    },
+    clientLastame: {
       type: String,
     },
     clientPhone: {

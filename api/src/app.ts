@@ -18,6 +18,7 @@ import carsRoutes from './modules/cars/cars.routes'
 import clientsRoutes from './modules/clients/clients.routes'
 import localsRoutes from './modules/locals/locals.routes'
 import authRoutes from './modules/users/auth.routes'
+import proformsRoutes from './modules/proforms/proforms.routes'
 import swaggerJSDoc from 'swagger-jsdoc'
 
 const app = express()
@@ -55,6 +56,7 @@ app.use(carsRoutes)
 app.use(clientsRoutes)
 app.use(localsRoutes)
 app.use(authRoutes)
+app.use(proformsRoutes)
 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs))
 app.use(require('./modules/index.js'))

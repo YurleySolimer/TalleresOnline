@@ -1,0 +1,30 @@
+@api = http://localhost:3000
+
+GET {{api}}/proforms
+
+###
+GET {{api}}/proform/60c8eaf98c43342934ba50b2
+
+### Create a proform
+POST {{api}}/proform
+Content-Type: application/json
+
+{
+    "number": 1,
+    "services": {
+        "description": "test",
+        "price": 234
+    },
+    "total": 240,
+    "placa": "1234",
+    "name": "My name 5",
+    "email": "p@prueba 5.com",
+    "ruc": "12394675"
+}
+
+###
+DELETE {{api}}/proform/60c8eaf98c43342934ba50b2
+
+###
+PUT {{api}}/proform/1
+
