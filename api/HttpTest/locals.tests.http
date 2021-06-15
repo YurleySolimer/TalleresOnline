@@ -1,0 +1,38 @@
+@api = http://localhost:3000
+
+### Get all locals
+GET {{api}}/locals
+
+### Get one by ID
+GET {{api}}/local/60c79cf9d7952937f46f3100
+
+### Create a Local
+POST {{api}}/local
+Content-Type: application/json
+
+{
+    "name": "Local 4",
+    "address": "this is the address",
+    "district": "district",
+    "phone": "´+54 1234567",
+    "ruc": 1234454,
+    "email": "email@email.com"
+}
+
+### Delete local
+DELETE {{api}}/local/60c7a47ab8de0a2b988c225a
+
+### Update local
+PUT {{api}}/local/60c7a4abea0374367801158b
+Content-Type: application/json
+
+{
+    "name": "Local 4",
+    "address": "this is the address",
+    "district": "district",
+    "phone": "´+54 1234567",
+    "ruc": 1234454,
+    "email": "email@email.com"
+}
+
+

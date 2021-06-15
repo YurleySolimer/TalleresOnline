@@ -1,0 +1,48 @@
+@api = http://localhost:3000
+
+GET {{api}}/orders
+
+###
+GET {{api}}/order/60bf624d20a66036c08add1b
+
+### Create a Order
+POST {{api}}/order
+Content-Type: application/json
+
+{
+    "number": 1,
+    "services": {
+        "description": "test",
+        "price": 234
+    },
+    "total": 240,
+    "placa": "1234",
+    "name": "My name 5",
+    "email": "p@prueba 5.com",
+    "ruc": "12394675"
+}
+
+###
+DELETE {{api}}/order/1
+
+###
+PUT {{api}}/order/1
+
+
+### SignUp
+POST {{api}}/signup
+Content-Type: application/json
+
+{
+    "email": "prueba@p.com",
+    "password": "prueba123"
+}
+
+### SignUp
+POST {{api}}/signin
+Content-Type: application/json
+
+{
+    "email": "prueba@p.com",
+    "password": "prueba123"
+}
