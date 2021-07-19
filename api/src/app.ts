@@ -59,7 +59,7 @@ app.use(authRoutes)
 app.use(proformsRoutes)
 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(specs))
-app.use(require('./modules/index.js'))
+//app.use(require('./modules/index.js'))
 
 //Uploads folder
 app.use('/uploads', express.static(path.resolve('uploads')))
