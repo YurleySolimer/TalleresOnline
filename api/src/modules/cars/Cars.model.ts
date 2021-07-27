@@ -11,7 +11,7 @@ const carsSchema = new Schema(
     marca: {
       type: String,
     },
-    cartype: {
+    color: {
       type: String,
     },
     año: {
@@ -23,10 +23,7 @@ const carsSchema = new Schema(
     observacion: {
       type: String,
     },
-    description: {
-      type: String,
-    },
-    kilometraje: {
+    valuables: {
       type: String,
     },
     pics: [
@@ -34,7 +31,6 @@ const carsSchema = new Schema(
         position: {
           type: String,
         },
-        description: String,
         picName: String,
         picPath: String,
       },

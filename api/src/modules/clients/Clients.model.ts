@@ -25,15 +25,6 @@ const clientsSchema = new Schema(
         type: String,
       },
     },
-    birthday: {
-      type: Date,
-    },
-    gener: {
-      type: String,
-    },
-    howKnow: {
-      type: String,
-    },
     ruc: {
       type: String,
     },

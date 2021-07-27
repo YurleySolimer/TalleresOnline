@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "222ac5c2-ac32-45dc-b172-ffd9382309f0",
+		"name": "TalleresOnline",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Order By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/order/61000e49d192013a24e334d7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order",
+						"61000e49d192013a24e334d7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proform By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/proform/6100147d7090cc39ecf193ac",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"proform",
+						"6100147d7090cc39ecf193ac"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Proforms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/proforms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"proforms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Client name",
+							"contentType": "",
+							"type": "text"
+						},
+						{
+							"key": "lastname",
+							"value": "Client lastname",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "Cliente@email.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "+581234567",
+							"type": "text"
+						},
+						{
+							"key": "ruc",
+							"value": "1234567",
+							"type": "text"
+						},
+						{
+							"key": "district",
+							"value": "Client district",
+							"type": "text"
+						},
+						{
+							"key": "department",
+							"value": "Client department",
+							"type": "text"
+						},
+						{
+							"key": "providence",
+							"value": "Client providence",
+							"type": "text"
+						},
+						{
+							"key": "placa",
+							"value": "Car Placa",
+							"type": "text"
+						},
+						{
+							"key": "modelo",
+							"value": "Car Modelo",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "Car Marca",
+							"type": "text"
+						},
+						{
+							"key": "año",
+							"value": "2010",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "Car Color",
+							"type": "text"
+						},
+						{
+							"key": "observacion",
+							"value": "Car observacion",
+							"type": "text"
+						},
+						{
+							"key": "valuables",
+							"value": "Car valuables",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/asus/Downloads/1602966813816 (2) (1).png"
+						},
+						{
+							"key": "position",
+							"value": "Position image 1 - Tablero",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/asus/Downloads/MCVP_Yurley_Solimer-removebg-preview.png"
+						},
+						{
+							"key": "position",
+							"value": "Position image 2 - Frontal",
+							"type": "text"
+						},
+						{
+							"key": "subtotal",
+							"value": "400",
+							"type": "text"
+						},
+						{
+							"key": "iva",
+							"value": "4",
+							"type": "text"
+						},
+						{
+							"key": "total",
+							"value": "404",
+							"type": "text"
+						},
+						{
+							"key": "discount",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "user",
+							"value": "userID12345",
+							"type": "text"
+						},
+						{
+							"key": "local",
+							"value": "localID12345",
+							"type": "text"
+						},
+						{
+							"key": "orderNum",
+							"value": "0001",
+							"type": "text"
+						},
+						{
+							"key": "daliveryDate",
+							"value": "2021-06-07",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/order",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create New Proform",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "proformNum",
+							"value": "00002",
+							"type": "text"
+						},
+						{
+							"key": "placa",
+							"value": "carplca123",
+							"type": "text"
+						},
+						{
+							"key": "marca",
+							"value": "car Marca",
+							"type": "text"
+						},
+						{
+							"key": "model",
+							"value": "car Model",
+							"type": "text"
+						},
+						{
+							"key": "año",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "car Color",
+							"type": "text"
+						},
+						{
+							"key": "clientName",
+							"value": "Lely",
+							"type": "text"
+						},
+						{
+							"key": "clientLastname",
+							"value": "Solime",
+							"type": "text"
+						},
+						{
+							"key": "clientPhone",
+							"value": "+581234567",
+							"type": "text"
+						},
+						{
+							"key": "clientRuc",
+							"value": "1234567",
+							"type": "text"
+						},
+						{
+							"key": "clientEmail",
+							"value": "client@email.com",
+							"type": "text"
+						},
+						{
+							"key": "total",
+							"value": "200",
+							"type": "text"
+						},
+						{
+							"key": "subtotal",
+							"value": "180",
+							"type": "text"
+						},
+						{
+							"key": "iva",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "discount",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "deliveryDate",
+							"value": "2021-06-23",
+							"type": "text"
+						},
+						{
+							"key": "localID",
+							"value": "localID1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/proform",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"proform"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

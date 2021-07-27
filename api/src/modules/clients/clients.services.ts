@@ -34,9 +34,7 @@ export async function createClient(data: any): Promise<Document | null> {
       lastname: data.lastaname,
       email: data.email,
       phone: data.phone,
-      gender: data.gender,
       ruc: data.ruc,
-      howKnow: data.howKnow,
       address,
       locals
     }

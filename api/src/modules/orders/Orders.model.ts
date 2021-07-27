@@ -8,8 +8,8 @@ const ordersSchema = new Schema(
     subTotal: {
       type: Number,
     },
-    category: {
-      type: String,
+    discount: {
+      type: Number,
     },
     iva: {
       type: Number,
@@ -39,8 +39,8 @@ const ordersSchema = new Schema(
         service: {
           type: String,
         },
-        description: {
-          type: String,
+        count: {
+          type: Number,
         },
         price: {
           type: Number,
@@ -49,6 +49,9 @@ const ordersSchema = new Schema(
     ],
     total: {
       type: Number,
+    },
+    deliveryDate: {
+      type: Date
     },
   },
   {

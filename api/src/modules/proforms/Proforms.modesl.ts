@@ -5,9 +5,6 @@ const proformsSchema = new Schema(
     proformNum: {
       type: Number,
     },
-    carType: {
-      type: Number,
-    },
     placa: {
       type: String,
     },
@@ -20,8 +17,8 @@ const proformsSchema = new Schema(
     año: {
       default: Number,
     },
-    kilometraje: {
-      type: Number,
+    color: {
+      type: String,
     },
     clientName: {
       type: String,
@@ -38,15 +35,12 @@ const proformsSchema = new Schema(
     clientEmail: {
       type: String,
     },
-    clientAdress: {
-      type: String,
-    },
     services: [
       {
         service: {
           type: String,
         },
-        description: {
+        count: {
           type: String,
         },
         price: {
@@ -62,6 +56,12 @@ const proformsSchema = new Schema(
     },
     iva: {
       type: Number,
+    },
+    discount: {
+      type: Number
+    },
+    deliveryDate: {
+      type: Date
     },
     local: {
       type: String,

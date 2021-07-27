@@ -33,12 +33,10 @@ export async function createCar(
       placa: data.placa,
       modelo: data.modelo,
       marca: data.marca,
-      carType: data.carType,
+      color: data.color,
       año: data.año,
-      nivel_gasolina: data.nivel_gasolina,
       observacion: data.observacion,
-      description: data.description,
-      kilometraje: data.kilometraje,
+      valuables: data.valuables,
       pics,
     }
 

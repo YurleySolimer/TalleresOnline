@@ -9,14 +9,15 @@ export async function createOrder(
 ): Promise<Document | null> {
   try {
     const newOT = {
-      category: data.category,
       subtotal: data.subtotal,
       iva: data.iva,
       total: data.total,
+      discount: data.discount,
       user: data.userId,
       local: data.local,
       orderNum: data.orderNum,
       services: data.services,
+      deliveryDate: data.deliveryDate,
       client: client._id,
       car: car._id,
     }
@@ -32,6 +33,8 @@ export async function createOrder(
 export async function getOrder(orderId: string): Promise<Document | null> {
   try {
     const order = await Order.findById(orderId)
+                       .populate({ path: 'client', select: {'email': 1, 'name': 1, 'lastname': 1, 'address': 1, 'ruc': 1, '_id': 1 } })
+                       .populate('car')
     if (!order) {
       return null
     }
