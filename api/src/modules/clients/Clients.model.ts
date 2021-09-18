@@ -31,19 +31,32 @@ const clientsSchema = new Schema(
     locals: [
       {
         local: {
-          type: String,
+          ref: 'Locals',
+          type: Schema.Types.ObjectId,
         },
         visits: {
           type: String,
         },
+        fistVist: {
+          type: Date
+        },
         lastVisit: {
           type: Date,
+        },
+        totalSpend: {
+          type: Number
         },
         clientType: {
           type: String,
         },
       },
     ],
+    cars: [
+      {
+        ref: 'Cars',
+        type: Schema.Types.ObjectId,
+      }
+    ]
   },
   {
     versionKey: false,

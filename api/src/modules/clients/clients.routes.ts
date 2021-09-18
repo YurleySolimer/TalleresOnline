@@ -2,6 +2,8 @@ import { Router } from 'express'
 const router = Router()
 
 import * as clientCtrl from './clients.services'
+import { verifyId } from '../../middlewares/verifyId'
+
 
 //Create a Client
 router.post('/client', async (req, res) => {
@@ -15,7 +17,7 @@ router.post('/client', async (req, res) => {
 })
 
 //Get a Client by Id
-router.get('/client/:id', async (req, res) => {
+router.get('/client/:id', verifyId, async (req, res) => {
   try {
     const clientId = req.params.id
     const client = await clientCtrl.getClient(clientId)
@@ -40,7 +42,7 @@ router.get('/clients', async (req, res) => {
 })
 
 //Delete a Client by Id
-router.delete('/client/:id', async (req, res) => {
+router.delete('/client/:id', verifyId, async (req, res) => {
   try {
     const clientId = req.params.id
     const client = await clientCtrl.deleteClient(clientId)
@@ -56,7 +58,7 @@ router.delete('/client/:id', async (req, res) => {
 })
 
 //Update a Client by Id
-router.put('/client/:id', async (req, res) => {
+router.put('/client/:id', verifyId, async (req, res) => {
   try {
     const clientId = req.params.id
     const data = req.body

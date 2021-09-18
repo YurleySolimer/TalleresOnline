@@ -4,10 +4,13 @@ const router = Router()
 import * as ordersCtrl from './orders.services'
 import * as clientCtrl from '../clients/clients.services'
 import * as carsCtrl from '../cars/cars.services'
+import { verifyId } from '../../middlewares/verifyId'
+
 import multer from '../../libs/multer'
 
 //Create a order
 router.post('/order', multer.array('image'), async (req, res) => {
+  console.log(req.body)
   try {
     const data = req.body
     const file = req.files
@@ -22,7 +25,7 @@ router.post('/order', multer.array('image'), async (req, res) => {
 })
 
 //Get a order by Id
-router.get('/order/:id', async (req, res) => {
+router.get('/order/:id', verifyId, async (req, res) => {
   try {
     const orderId = req.params.id
     const order = await ordersCtrl.getOrder(orderId)
@@ -47,7 +50,7 @@ router.get('/orders', async (req, res) => {
 })
 
 //Delete a order by Id
-router.delete('/order/:id', async (req, res) => {
+router.delete('/order/:id', verifyId, async (req, res) => {
   try {
     const orderId = req.params.id
     const order = await ordersCtrl.deleteOrder(orderId)
@@ -63,7 +66,7 @@ router.delete('/order/:id', async (req, res) => {
 })
 
 //Update a order by Id
-router.put('/order/:id', multer.array('image'), async (req, res) => {
+router.put('/order/:id', verifyId, multer.array('image'), async (req, res) => {
   try {
     const orderId = req.params.id
     const data = req.body

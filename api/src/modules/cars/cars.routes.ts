@@ -3,6 +3,7 @@ import { Router } from 'express'
 const router = Router()
 
 import multer from '../../libs/multer'
+import { verifyId } from '../../middlewares/verifyId'
 import * as carsCtrl from './cars.services'
 
 //Create a car
@@ -18,7 +19,7 @@ router.post('/car', multer.array('image'), async (req, res) => {
 })
 
 //Get a Car by Id
-router.get('/car/:id', async (req, res) => {
+router.get('/car/:id', verifyId, async (req, res) => {
   try {
     const carId = req.params.id
     const car = await carsCtrl.getCar(carId)
@@ -43,7 +44,7 @@ router.get('/cars', async (req, res) => {
 })
 
 //Delete a Car by Id
-router.delete('/car/:id', async (req, res) => {
+router.delete('/car/:id', verifyId, async (req, res) => {
   try {
     const carId = req.params.id
     const car = await carsCtrl.deleteCar(carId)
@@ -59,7 +60,7 @@ router.delete('/car/:id', async (req, res) => {
 })
 
 //Update a Car by Id
-router.put('/car/:id', multer.array('image'), async (req, res) => {
+router.put('/car/:id', verifyId, multer.array('image'), async (req, res) => {
   try {
     const carId = req.params.id
     const data = req.body

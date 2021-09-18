@@ -4,6 +4,8 @@ const router = Router()
 
 import multer from '../../libs/multer'
 import * as localCtrl from './locals.services'
+import { verifyId } from '../../middlewares/verifyId'
+
 
 //Create a Local
 router.post('/local', multer.single('image'), async (req, res) => {
@@ -18,7 +20,7 @@ router.post('/local', multer.single('image'), async (req, res) => {
 })
 
 //Get a Local by Id
-router.get('/local/:id', async (req, res) => {
+router.get('/local/:id', verifyId, async (req, res) => {
   try {
     const localId = req.params.id
     const local = await localCtrl.getLocal(localId)
@@ -43,7 +45,7 @@ router.get('/locals', async (req, res) => {
 })
 
 //Delete a Local by Id
-router.delete('/local/:id', async (req, res) => {
+router.delete('/local/:id', verifyId, async (req, res) => {
   try {
     const localId = req.params.id
     const local = await localCtrl.deleteLocal(localId)
@@ -59,7 +61,7 @@ router.delete('/local/:id', async (req, res) => {
 })
 
 //Update a Local by Id
-router.put('/local/:id', multer.single('image'), async (req, res) => {
+router.put('/local/:id', verifyId, multer.single('image'), async (req, res) => {
   try {
     const localId = req.params.id
     const data = req.body

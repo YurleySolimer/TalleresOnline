@@ -2,6 +2,7 @@ import { Router } from 'express'
 const router = Router()
 
 import * as proformCtrl from './proforms.services'
+import { verifyId } from '../../middlewares/verifyId'
 
 //Create a proform
 router.post('/proform', async (req, res) => {
@@ -15,7 +16,7 @@ router.post('/proform', async (req, res) => {
 })
 
 //Get a proform by Id
-router.get('/proform/:id', async (req, res) => {
+router.get('/proform/:id', verifyId, async (req, res) => {
   try {
     const proformId = req.params.id
     const proform = await proformCtrl.getProform(proformId)
@@ -40,7 +41,7 @@ router.get('/proforms', async (req, res) => {
 })
 
 //Delete a proform by Id
-router.delete('/proform/:id', async (req, res) => {
+router.delete('/proform/:id', verifyId, async (req, res) => {
   try {
     const proformId = req.params.id
     const proform = await proformCtrl.deleteProform(proformId)
@@ -56,7 +57,7 @@ router.delete('/proform/:id', async (req, res) => {
 })
 
 //Update a proform by Id
-router.put('/proform/:id', async (req, res) => {
+router.put('/proform/:id', verifyId, async (req, res) => {
   try {
     const proformId = req.params.id
     const data = req.body

@@ -2,6 +2,8 @@ import { Router } from 'express'
 const router = Router()
 
 import * as invoiceCtrl from './invoices.services'
+import { verifyId } from '../../middlewares/verifyId'
+
 
 //Create a invoice
 router.post('/invoice', async (req, res) => {
@@ -15,7 +17,7 @@ router.post('/invoice', async (req, res) => {
 })
 
 //Get a invoice by Id
-router.get('/invoice/:id', async (req, res) => {
+router.get('/invoice/:id', verifyId, async (req, res) => {
   try {
     const invoiceId = req.params.id
     const invoice = await invoiceCtrl.getInvoice(invoiceId)
@@ -40,7 +42,7 @@ router.get('/invoices', async (req, res) => {
 })
 
 //Delete a invoice by Id
-router.delete('/invoice/:id', async (req, res) => {
+router.delete('/invoice/:id', verifyId, async (req, res) => {
   try {
     const invoiceId = req.params.id
     const invoice = await invoiceCtrl.deleteInvoice(invoiceId)
@@ -56,7 +58,7 @@ router.delete('/invoice/:id', async (req, res) => {
 })
 
 //Update a invoice by Id
-router.put('/invoice/:id', async (req, res) => {
+router.put('/invoice/:id', verifyId, async (req, res) => {
   try {
     const invoiceId = req.params.id
     const data = req.body
