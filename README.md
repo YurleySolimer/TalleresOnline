@@ -2,7 +2,7 @@
 
 An api to create and manage the processes of a machine shop.
 <br>
-<b> Built with:</b> Node, Express, MongoDB
+<b> Built with:</b> Node, TypeScript, Express, MongoDB
 
 <br> 
 
